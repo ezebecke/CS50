@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+import os
+import sys
+import nltk
+
+from analyzer import Analyzer
+from termcolor import colored
+from helpers import get_user_timeline
+from nltk.tokenize import TweetTokenizer
+
+
+def main():
+
+#proper usage:
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets @screen_name")
+
+    #get the last 50 tweets
+    tweet = get_user_timeline(sys.argv[1], count=50)
+
+    if tweet == None:
+        sys.exit("Error 1, private account")
+
+    # absolute paths to lists and assign positives and negatives
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+
+    #create variables score (to save each analyze number) and nexttweet(to move to the next tweet in the loop)
+    score = 0
+    nexttweet = 0
+
+    #implement tokenizertweet to separate a long string into samller (words)
+    for eachtweet in tweet:
+        tokenizer = TweetTokenizer()
+        tkns = tokenizer.tokenize(eachtweet)
+        final_score = 0
+        #print('', tweet[nexttweet])
+
+        #do something for each word:
+        for tokens in tkns:
+            #analyzer.analyze(tokens)
+            #analyze each word and save the respective number
+            score = analyzer.analyze(tokens)
+
+            final_score = score + final_score
+
+        #print each tweet with the final score of each and the color
+        if final_score > 0.0:
+            print(colored(final_score, "green"), colored(tweet[nexttweet], "green"))
+        elif final_score < 0.0:
+            print(colored(final_score, "red"), colored(tweet[nexttweet], "red"))
+        else:
+            print(colored(final_score, "yellow"), colored(tweet[nexttweet], "yellow"))
+        nexttweet += 1
+
+if __name__ == "__main__":
+    main()
+

@@ -1,0 +1,9 @@
+feedparser
+Flask
+Flask-JSGlue
+
+google KEY: AIzaSyD6BEWIx_UUr59-QzTYdUe87DJBtyhTkNU
+export API_KEY=AIzaSyD6BEWIx_UUr59-QzTYdUe87DJBtyhTkNU
+
+execute liteadmin tables
+phpliteadmin mashup.db

@@ -1,4 +1,5 @@
 
+Last 3 projects implemented in CS50 course:
 
 Sentiments
 

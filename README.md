@@ -18,9 +18,10 @@ Usage:
 ```
 
 
-## Week 9: Python & SQL
 
-C$50 Finance
+
+Finance
+
 Implement a website via which users can "buy" and "sell" stocks, a la the below.
 
 [![finance.png](https://s2.postimg.org/imls4ymc9/finance.png)](https://postimg.org/image/vdzybgw45/)
@@ -35,7 +36,8 @@ Usage:
 ~/workspace/pset7/finance/ (master) $ flask run
 ~/workspace/pset7/finance/ (master) $ phpliteadmin finance.db
 ```
-## Week 10 & 11: Javascript
+
+Mashup
 Implement a website that lets users search for articles atop a map (using Google's API)
 
 [![mashup.png](https://s2.postimg.org/tm6zgmxcp/mashup.png)](https://postimg.org/image/yxlw1cjf9/)

@@ -10,13 +10,21 @@ smile.py : a program that categorizes a word as positive or negative
 tweets.py categorizes a user’s recent 50 tweets as positive or negative (uses Twitter API)
 
 Usage: 
+
+1- Sign up for Twitter at twitter.com/signup if you don’t already have an account.
+
+2- Visit apps.twitter.com, logging in if prompted, and click Create New App. Go to your keys and Tokens and copy the values.
+
+
+3- Using Cloud9: 
+
 ```javascript
-~/workspace/pset6/sentiments/ (master) $ export API_KEY= <insert your API_KEY from Twitter here>
-~/workspace/pset6/sentiments/ (master) $ export API_SECRET= <insert your API_SECRET from Twitter here>
-~/workspace/pset6/sentiments/ (master) $ export FLASK_APP=application.py
-~/workspace/pset6/sentiments/ (master) $ export FLASK_DEBUG=1
-~/workspace/pset6/sentiments/ (master) $ flask run
+~/workspace/sentiments/ (master) $ export API_KEY=<API_KEY from Twitter here>
+~/workspace/sentiments/ (master) $ export API_SECRET=<API_SECRET from Twitter here>
+~/workspace/sentiments/ (master) $ export FLASK_APP=application.py
+~/workspace/sentiments/ (master) $ flask run
 ```
+
 
 
 
